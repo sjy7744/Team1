@@ -1,4 +1,5 @@
 
+import java.util.*;
 public class Main {
 
 	public static void main ( String[] args ) {
@@ -6,17 +7,30 @@ public class Main {
 		System.out.println(factorial+"! is " + calculateFactorial(factorial));
 	}
 	
-	// method return inputted number¡¯s factorial result.
+	// method return inputted numberï¿½ï¿½s factorial result.
 	public static int calculateFactorial(int factorial){
-		if(factorial<0)//À½¼ö ÀÏ ¶§
-			if(factorial%2==0)//Â¦¼öÀÎ À½¼ö
+		if(factorial<0)//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
+			if(factorial%2==0)//Â¦ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				return calculateFactorial(factorial+1)*factorial*-1;
-			else//È¦¼öÀÎ À½¼ö
+			else//È¦ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			return calculateFactorial(factorial+1)*factorial;
 		
-		else if(factorial-1!=0 && factorial>=1)//¾ç¼ö
+		else if(factorial-1!=0 && factorial>=1)//ï¿½ï¿½ï¿½
 			return calculateFactorial(factorial-1)*factorial;
 		else//0!=1
 			return 1; //0!=1
+	}
+	public static void GUGUDAN(){
+		Scanner sc = new Scanner(System.in);
+		int num;
+		System.out.println("êµ¬êµ¬ë‹¨ ì…ë‹ˆë‹¤.");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		num = sc.nextInt();
+		System.out.println(num + "ë‹¨ ì¶œë ¥í•©ë‹ˆë‹¤.");
+		for(int i = 1; i <10; i ++)
+		{
+			System.out.println(num +"*" +i +"="+ num*i);
+		}
+		
 	}
 }
