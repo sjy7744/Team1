@@ -7,19 +7,22 @@ public class Main {
 
 	public static void main ( String[] args ) {
 		int factorial = 5;
-		System.out.println(factorial+"! is " + calculateFactorial(factorial));
-		System.out.println("Current Time is : " + getTime());
+		System.out.println(factorial+"! is " + calculateFactorial(factorial)+"\n");		
+		System.out.println("Current Time is : " + getTime()+"\n");
+		GUGUDAN();		
+		drawDiamond();
+		
 	}
 	
-	// method return inputted number占쏙옙s factorial result.
+	// method return inputted number's factorial result.
 	public static int calculateFactorial(int factorial){
-		if(factorial<0)//占쏙옙占쏙옙 占쏙옙 占쏙옙
-			if(factorial%2==0)//짝占쏙옙占쏙옙 占쏙옙占쏙옙
+		if(factorial<0)//negative number
+			if(factorial%2==0)//negative even number
 				return calculateFactorial(factorial+1)*factorial*-1;
-			else//홀占쏙옙占쏙옙 占쏙옙占쏙옙
+			else//negative odd number
 			return calculateFactorial(factorial+1)*factorial;
 		
-		else if(factorial-1!=0 && factorial>=1)//占쏙옙占�
+		else if(factorial-1!=0 && factorial>=1)//positive number
 			return calculateFactorial(factorial-1)*factorial;
 		else//0!=1
 			return 1; //0!=1
@@ -27,15 +30,15 @@ public class Main {
 	public static void GUGUDAN(){
 		Scanner sc = new Scanner(System.in);
 		int num;
-		System.out.println("援ш뎄�떒 �엯�땲�떎.");
-		System.out.println("�닽�옄瑜� �엯�젰�븯�꽭�슂.");
+		System.out.println("GUGUDAN");
+		System.out.println("Input table number.");
 		num = sc.nextInt();
-		System.out.println(num + "�떒 異쒕젰�빀�땲�떎.");
+		System.out.println("table " + num);
 		for(int i = 1; i <10; i ++)
 		{
 			System.out.println(num +"*" +i +"="+ num*i);
 		}
-		
+		System.out.println();
 	}
 	
 	public static String getTime() {
@@ -46,4 +49,21 @@ public class Main {
 			
 			return formattedDate;
 	 	}
+	
+	public static void drawDiamond(){
+		for(int i=1;i<=4;i++){ 
+ 			for(int j=1;j<=5-i;j++){ 
+ 			System.out.print("����");} 
+ 			for(int j=1;j<=(i*2)-1;j++){ 
+ 			System.out.print("����");} 
+ 		System.out.println(); 
+ 		} 
+ 		for(int i=5;i>=1;i--){ 
+ 			for(int j=5-i;j>=1;j--){ 
+ 			System.out.print("����");} 
+ 			for(int j = (i*2)-1;j>=1;j--){ 
+ 				System.out.print("����");} 
+ 			System.out.println(); 
+ 		}
+	}
 }
